@@ -69,4 +69,7 @@ new_product <- data.frame(product= 'cake', category='groceries',price=10, quanti
 shopping_data <- rbind(shopping_data,new_product)
 shopping_data
 # Selecting columns
-select(shopping_data,product,price)
+library(tidyverse)
+select(shopping_data,product,price) # output: dataframe
+#filtering rows
+filter(shopping_data, price > 1) # output: Dataframe
