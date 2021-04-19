@@ -73,3 +73,11 @@ library(tidyverse)
 select(shopping_data,product,price) # output: dataframe
 #filtering rows
 filter(shopping_data, price > 1) # output: Dataframe
+# Select and filtering
+dataset2 <-shopping_data %>% select(product,price) %>% filter(price > 1)
+# Group By & Summarize
+dataset2 <- shopping_data %>%
+  select(product,price) %>%
+  filter(price > 1 ) %>%
+  group_by(product) %>%
+  summarize(avg = mean(price))
